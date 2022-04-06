@@ -90,7 +90,7 @@ const App: FC = () => {
               style={{
                 width: 10,
                 height: 10,
-                backgroundColor: grid[i][j] ? "#F68E5F" : undefined,
+                backgroundColor: grid[i][j] ? "#000" : undefined,
                 border: "1px solid #595959",
               }}
               key={`${i}-${j}`}
@@ -105,12 +105,16 @@ const App: FC = () => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          padding: 10,
+          width: "80%",
+          textAlign: "center",
+          margin: "0 auto",
+          padding: "20 0"
         }}
       >
         <button
+          style={{
+            margin: 10
+          }}
           onClick={() => {
             setRunning(!running);
             if (!running) {
@@ -121,6 +125,9 @@ const App: FC = () => {
           {running ? "Stop" : "Start"}
         </button>
         <button
+          style={{
+            margin: 10
+          }}
           onClick={() => {
             const gridG = generateEmptyGrid();
             setGrid(gridG);
@@ -129,6 +136,9 @@ const App: FC = () => {
           Clear board
         </button>
         <button
+          style={{
+            margin: 10
+          }}
           onClick={() => {
             setGrid(randomTiles());
           }}
